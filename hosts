@@ -1,0 +1,33 @@
+# Ansible hosts file
+# ==================
+#
+#   - Groups of hosts are delimited by [header] elements
+
+# Ungrouped hosts
+
+lba ansible_ssh_host=192.168.0.80
+web1 ansible_ssh_host=192.168.0.81
+web2 ansible_ssh_host=192.168.0.82
+
+# A collection of hosts belonging to the 'loadbalancers' group
+
+[loadbalancers]
+lba
+
+# A collection of hosts belonging to the 'webservers' group
+
+[webservers]
+web1
+web2
+
+# Parent group 'global' that contains children groups 'loadbalancers' and 'webservers'
+
+[global:children]
+loadbalancers
+webservers
+
+# Variables defined for group 'global'
+
+[global:vars]
+ansible_ssh_user=vagrant
+ansible_ssh_pass=vagrant

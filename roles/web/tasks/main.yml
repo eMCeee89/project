@@ -1,0 +1,5 @@
+---
+
+- name: Copy script to remote Vagrant machine
+  template: src="script.j2" dest="{{ home_dir }}" mode="770"
+  notify: Enable Execution

@@ -1,0 +1,6 @@
+---
+
+- name: Deploy configuration file for Nginx to balance the load
+  template: src="nginxDefaultLB.j2" dest="{{ cfg_file }}"
+  notify:
+  - Restart Nginx

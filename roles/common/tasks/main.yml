@@ -1,0 +1,11 @@
+---
+
+- name: Ensure that Nginx is installed on RedHat
+  yum: name=nginx state=present
+  when: ansible_os_family == "RedHat"
+  notify: Start Nginx
+
+- name: Ensure that Nginx is installed on Debian
+  apt: name=nginx state=present
+  when: ansible_os_family == "Debian"
+  notify: Start Nginx
