@@ -41,8 +41,8 @@ config.vm.box_check_update = false
 # Privison Vagrant Host by Ansible playbook.
 #
 config.vm.provision "ansible" do |ansible|
-	ansible.playbook = "/etc/ansible/projectPlayBook.yml"
-	ansible.inventory_path = "/etc/ansible/hosts"
+	ansible.playbook = "projectPlayBook.yml"
+	ansible.inventory_path = "hosts"
 	end
 
 end
