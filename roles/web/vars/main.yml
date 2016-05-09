@@ -1,4 +1,4 @@
 ---
 
-nginx_dir: /usr/share/nginx/html
-home_dir: "{{ ansible_user_dir }}/script.sh"
+nginx_dir: /usr/share/nginx/html              # directory where index.html file of Nginx webserver is located
+home_dir: "{{ ansible_user_dir }}/script.sh"  # directory where script is placed - home directory of Ansible user
