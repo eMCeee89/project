@@ -1,3 +1,4 @@
 ---
 
 cfg_file: /etc/nginx/sites-available/default
+var: "{{ ansible_eth1 }}"

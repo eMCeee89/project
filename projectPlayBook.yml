@@ -19,3 +19,6 @@
   gather_facts: no      # Disable facts gathering as no facts are used here
   roles:
   - lba  
+
+  tasks:
+  - debug: msg="Hodnota"

@@ -1,0 +1,13 @@
+---
+
+- include: global.yml
+  tags:
+  - tagGLOB
+
+- include: loadbalancers.yml
+  tags:
+  - tagLBA
+
+- include: webservers.yml
+  tags:
+  - tagWEB
