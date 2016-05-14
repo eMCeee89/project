@@ -1,4 +1,8 @@
 ---
 
+<<<<<<< HEAD
 cfg_file: /etc/nginx/sites-available/default
 var: "{{ ansible_eth1 }}"
+=======
+cfg_file: /etc/nginx/sites-available/default # configuration file for Nginx loadbalancer for connecting to backend servers
+>>>>>>> 9e695bc959841d1aa730221f70f0bac549287c59
