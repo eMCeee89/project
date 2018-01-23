@@ -1,0 +1,7 @@
+---
+
+- name: install dependent packages
+  yum:
+    name: "{{ item }}"
+    state: installed
+  with_items: "{{ kube_common_rpm_required_packages }}"

@@ -1,5 +1,0 @@
----
-
-- name: Enable Execution
-  become: True
-  cron: name="Execute script every 5 minutes" user="{{ ansible_user_id }}" job="sudo {{ ansible_user_dir }}/script.sh" minute="*/5" 

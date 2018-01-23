@@ -1,0 +1,11 @@
+---
+
+- name: add required RPM repositories
+  yum_repository:
+    name: "{{ item.name }}"
+    description: "{{ item.description }}"
+    baseurl: "{{ item.baseurl }}"
+    gpgcheck: "{{ item.gpgcheck }}"
+    enabled: "{{ item.enabled }}"
+    state: present
+  with_items: "{{ kube_common_rpm_required_repos }}"

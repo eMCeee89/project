@@ -1,11 +1,13 @@
 ---
 
-- name: Ensure that Nginx is installed on RedHat
-  yum: name=nginx state=present
-  when: ansible_os_family == "RedHat"
-  notify: Start Nginx
+- name: include NTP task
+  include_tasks: "ntp.yml"
 
-- name: Ensure that Nginx is installed on Debian
-  apt: name=nginx state=present
-  when: ansible_os_family == "Debian"
-  notify: Start Nginx
+- name: include hosts file task
+  include_tasks: "hosts.yml"
+
+- name: include repository task
+  include_tasks: "repo.yml"
+
+- name: include yum dependencies task
+  include_tasks: "yum-dependencies.yml"

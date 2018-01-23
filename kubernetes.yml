@@ -1,0 +1,21 @@
+---
+# Ansible palybook kubernetes.yml
+# ====================================
+#
+#   This is ansible playbook that triggers ansible roles for specified host
+#   groups.
+
+- hosts: global
+  become: True
+  roles:
+  - common
+
+# - hosts: masters
+#   become: True
+#   roles:
+#   - web
+#
+# - hosts: nodes
+#   become: True
+#   roles:
+#   - lba

@@ -1,0 +1,12 @@
+---
+
+- name: ensure that NTP package {{ kube_common_ntp_package }} is installed
+  yum:
+    name: "{{ kube_common_ntp_package }}"
+    state: installed
+
+- name: ensure that NTP service {{ kube_common_ntp_service }} is and enabled and running
+  systemd:
+    name: "{{ kube_common_ntp_service }}"
+    enabled: yes
+    state: started

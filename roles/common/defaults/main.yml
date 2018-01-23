@@ -1,0 +1,19 @@
+---
+
+kube_common_ntp_package: "chrony"
+kube_common_ntp_service: "chronyd"
+
+kube_common_rpm_virt7:
+  name: "virt7-docker-common-release"
+  description: "CBS Centos virt7 docker common release repository"
+  baseurl: "http://cbs.centos.org/repos/virt7-docker-common-release/x86_64/os/"
+  gpgcheck: no
+  enabled: yes
+
+kube_common_rpm_required_repos:
+  - "{{ kube_common_rpm_virt7 }}"
+
+kube_common_rpm_required_packages:
+  - etcd
+  - kubernetes
+  - docker

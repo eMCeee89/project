@@ -1,7 +1,0 @@
----
-
-- hosts: loadbalancers
-  gather_facts: no
-  become: true
-  roles:
-  - lba

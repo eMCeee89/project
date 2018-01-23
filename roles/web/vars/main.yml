@@ -1,9 +1,0 @@
----
-
-<<<<<<< HEAD
-nginx_dir: "/usr/share/nginx/html"
-home_dir: "{{ ansible_user_dir }}"
-=======
-nginx_dir: "/usr/share/nginx/html"            # directory where index.html file of Nginx webserver is located
-home_dir: "{{ ansible_user_dir }}"            # directory where script is placed - home directory of Ansible user
->>>>>>> 9e695bc959841d1aa730221f70f0bac549287c59

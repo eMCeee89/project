@@ -1,9 +1,0 @@
----
-
-- hosts: webservers
-  become: yes
-  roles:
-  - web
-
-  tasks:
-  - debug: msg="{{ enc_passwd }}"

@@ -1,7 +1,0 @@
-#!/bin/bash
-
-# Variable "var" holds the value of how many file handlers are allocated at the time
-var=`awk '{ print $1 }' /proc/sys/fs/file-nr` 
-
-# Standard output of program echo is redirected to index.html file
-echo "Current number of allocated file handlers is $var on server {{ ansible_hostname }}." > {{ nginx_dir }}/index.html

@@ -3,31 +3,31 @@
 #
 #   - Groups of hosts are delimited by [header] elements
 
-# Ungrouped hosts
+# Un-grouped hosts
 
-lba ansible_ssh_host=192.168.0.80
-web1 ansible_ssh_host=192.168.0.81
-web2 ansible_ssh_host=192.168.0.82
+master ansible_ssh_host=192.168.121.10
+minion-1 ansible_ssh_host=192.168.121.21
+minion-2 ansible_ssh_host=192.168.121.22
 
-# A collection of hosts belonging to the 'loadbalancers' group
+# A collection of hosts belonging to the 'masters' group
 
-[loadbalancers]
-lba
+[masters]
+master
 
-# A collection of hosts belonging to the 'webservers' group
+# A collection of hosts belonging to the 'nodes' group
 
-[webservers]
-web1
-web2
+[nodes]
+minion-1
+minion-2
 
-# Parent group 'global' that contains children groups 'loadbalancers' and 'webservers'
+# Parent group 'global' that contains children groups 'masters' and 'nodess'
 
 [global:children]
-loadbalancers
-webservers
+masters
+nodes
 
 # Variables defined for group 'global'
 
 [global:vars]
-ansible_ssh_user=vagrant
-ansible_ssh_pass=vagrant
+ansible_user=vagrant
+ansible_pass=vagrant
